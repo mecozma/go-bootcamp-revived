@@ -79,8 +79,9 @@ import (
 //
 // ---------------------------------------------------------
 var (
-	no_arg = "Give me the magnitude of the earthquake."
-	no_nu  = "I couldn't get that, sorry."
+	no_arg      = "Give me the magnitude of the earthquake."
+	no_nu       = "I couldn't get that, sorry."
+	description string
 )
 
 func main() {
@@ -96,24 +97,25 @@ func main() {
 		return
 	}
 
-	switch grade {
-	case 0.5:
-		fmt.Printf("%.2f is micro\n", grade)
-	case 2.5:
-		fmt.Printf("%.2f is very minor\n", grade)
-	case 3:
-		fmt.Printf("%.2f is minor\n", grade)
-	case 4.5:
-		fmt.Printf("%.2f is light\n", grade)
-	case 5:
-		fmt.Printf("%.2f is moderate\n", grade)
-	case 6:
-		fmt.Printf("%.2f is strong\n", grade)
-	case 7:
-		fmt.Printf("%.2f is major\n", grade)
-	case 8:
-		fmt.Printf("%.2f is great\n", grade)
-	case 11:
-		fmt.Printf("%.2f is massive\n", grade)
+	switch g := grade; {
+	case g < 2:
+		description = "micro"
+	case g >= 2 && g < 3:
+		description = "very minor"
+	case g >= 3 && g < 4:
+		description = "minor"
+	case g >= 4 && g < 5:
+		description = "light"
+	case g >= 5 && g < 6:
+		description = "moderate"
+	case g >= 6 && g < 7:
+		description = "strong"
+	case g >= 7 && g < 8:
+		description = "major"
+	case g >= 8 && g < 11:
+		description = "great"
+	default:
+		description = "massive"
 	}
+	fmt.Printf("%.2f is %s\n", grade, description)
 }
