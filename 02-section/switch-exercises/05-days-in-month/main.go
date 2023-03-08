@@ -36,27 +36,27 @@ func main() {
 	leap := year%4 == 0 && (year%100 != 0 || year%400 == 0)
 
 	days, month := 28, os.Args[1]
-
-	if m := strings.ToLower(month); m == "april" ||
+	switch m := strings.ToLower(month); {
+	case m == "april" ||
 		m == "june" ||
 		m == "september" ||
-		m == "november" {
+		m == "november":
 		days = 30
-	} else if m == "january" ||
+	case m == "january" ||
 		m == "march" ||
 		m == "may" ||
 		m == "july" ||
 		m == "august" ||
 		m == "october" ||
-		m == "december" {
+		m == "december":
 		days = 31
-	} else if m == "february" {
+	case m == "february":
 		if leap {
 			days = 29
 		}
-	} else {
+	default:
 		fmt.Printf("%q is not a month.\n", month)
-		return
+
 	}
 
 	fmt.Printf("%q has %d days.\n", month, days)
