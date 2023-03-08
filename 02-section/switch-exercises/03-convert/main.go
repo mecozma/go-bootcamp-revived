@@ -28,6 +28,30 @@ const (
 	pass, pass2 = "1888", "1879"
 )
 
+// func main() {
+// 	args := os.Args
+
+// 	if len(args) != 3 {
+// 		fmt.Println(usage)
+// 		return
+// 	}
+
+// 	u, p := args[1], args[2]
+
+// 	//
+// 	// REFACTOR THIS TO A SWITCH
+// 	//
+// 	if u != user && u != user2 {
+// 		fmt.Printf(errUser, u)
+// 	} else if u == user && p == pass {
+// 		fmt.Printf(accessOK, u)
+// 	} else if u == user2 && p == pass2 {
+// 		fmt.Printf(accessOK, u)
+// 	} else {
+// 		fmt.Printf(errPwd, u)
+// 	}
+// }
+
 func main() {
 	args := os.Args
 
@@ -37,9 +61,6 @@ func main() {
 	}
 
 	switch u, p := args[1], args[2]; {
-	//
-	// REFACTOR THIS TO A SWITCH
-	//
 	case u != user && u != user2:
 		fmt.Printf(errUser, u)
 	case u == user && p == pass:
