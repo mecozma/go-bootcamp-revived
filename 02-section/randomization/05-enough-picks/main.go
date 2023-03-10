@@ -103,7 +103,6 @@ func main() {
 		} else {
 			r = rand.Intn(guessOne) + 1
 		}
-		fmt.Printf("Print randon %d ", r)
 
 		if verbose {
 			fmt.Printf("%d ", r)
