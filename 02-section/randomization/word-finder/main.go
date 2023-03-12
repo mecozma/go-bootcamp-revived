@@ -19,6 +19,7 @@ queries:
 			if strings.EqualFold(q, w) {
 				fmt.Printf("#%-2d: %q\n", i+1, w)
 				break queries
+				// continue queries
 			}
 		}
 	}
