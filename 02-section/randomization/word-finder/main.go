@@ -15,11 +15,16 @@ func main() {
 
 queries:
 	for _, q := range args {
+	search:
 		for i, w := range words {
-			if strings.EqualFold(q, w) {
+			switch q {
+			case "and", "or", "the":
+				break search
+			}
+			if q == w {
 				fmt.Printf("#%-2d: %q\n", i+1, w)
-				break queries
-				// continue queries
+				// break queries
+				continue queries
 			}
 		}
 	}
