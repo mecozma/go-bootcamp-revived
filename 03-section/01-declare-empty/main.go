@@ -97,7 +97,7 @@ func main() {
 	fmt.Printf("name: %q\n", names)
 	fmt.Printf("distances: %v\n", distances)
 	fmt.Printf("data: %v\n", data)
-	fmt.Printf("ratios: %v\n", ratios)
+	fmt.Printf("ratios: %2f\n", ratios)
 	fmt.Printf("alives: %v\n", alives)
 	fmt.Printf("zero: %v\n", zero)
 
