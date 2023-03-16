@@ -13,7 +13,7 @@ func main() {
 		"Kafka's Revenge",
 		"Stay Golden",
 		"Everythingship",
-		// "Kafka's Revenge 2nd edition",
+		"Kafka's Revenge 2nd edition",
 	}
 
 	fmt.Printf("boooks : %q\n", books)
