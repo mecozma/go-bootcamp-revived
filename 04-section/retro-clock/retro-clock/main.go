@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	type placeholder [5]string
 
@@ -12,10 +14,10 @@ func main() {
 	}
 
 	one := placeholder{
-		"██",
-		" █",
-		" █",
-		" █",
+		"██ ",
+		" █ ",
+		" █ ",
+		" █ ",
 		"███",
 	}
 
@@ -82,7 +84,14 @@ func main() {
 		"  █",
 		"███",
 	}
-	digits := placeholder{
+	digits := [...]placeholder{
 		zero, one, two, three, four, five, six, seven, eight, nine,
+	}
+
+	for line := range digits[0] {
+		for digit := range digits {
+			fmt.Print(digits[digit][line], "  ")
+		}
+		fmt.Println()
 	}
 }
