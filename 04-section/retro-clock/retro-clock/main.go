@@ -66,7 +66,9 @@ func main() {
 			digits[seconds/10],
 			digits[seconds%10],
 		}
-
+		if seconds%10 == 0 {
+			clock = alarm
+		}
 		screen.Clear()
 		screen.MoveTopLeft()
 		for line := range clock[0] {
